@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virtual Tour</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    
+    <script src="./Tour.js"></script>
+    <script src="./cursorEvents.js"></script>
+
+  </head>
+  <body>
+    <a-scene id="main-scene">     
+
+      <a-entity id="places-container" tour></a-entity>
+
+      <a-sky id="main-container" radius="5000" class="main" rotation = "0 45 0" src = "./assets/main.jpg" color="#98DAFC"></a-sky>
+        <a-camera id="camera" wasd-controls="enabled:false;">
+          <a-entity
+            id="app-title"
+            position="0 0.59 -1"
+            text="font: exo2bold; align: center; width: 2; color: #000; value: My Locality">
+          </a-entity>
+  
+          <a-entity
+            id="camera-cursor"
+            cursor
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: #fff; shader: flat"
+          >
+          </a-entity>
+        </a-camera>
+
+    </a-scene>
+  </body>
+</html>
